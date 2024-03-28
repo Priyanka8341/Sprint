@@ -22,8 +22,9 @@ public class scenario4 {
     }
     @FindBy(id="tenant")
     WebElement tenant;
-    @FindBy(id="tenantAddress")
-  //@FindBy(xpath="//*[@id='tenantAddress']")
+    //@FindBy(id="tenantAddress")
+    @FindBy(xpath="//*[@id='tenantAddress']")
+    //xpath("//input[@class='rental__form__row--input-text' and @id='tenantAddress']"
    // @FindBy(xpath="/html/body/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/input")
    // @FindBy(xpath="/html/body/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/label[contains(text(),'Permanent Address')]")
     WebElement permanant;
@@ -39,8 +40,12 @@ public class scenario4 {
         tenant.click();
         JavascriptExecutor javascriptExecutor= (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("window.scrollBy(0,400)");
-		WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(10))
-		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='rental__form__row--input-text' and @id='tenantAddress']")));
+		/*
+		 * WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(10))
+		 * .until(ExpectedConditions.elementToBeClickable(By.
+		 * xpath("//input[@class='rental__form__row--input-text' and @id='tenantAddress']"
+		 * )));
+		 */
 		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		//Thread.sleep(5000);
     }
